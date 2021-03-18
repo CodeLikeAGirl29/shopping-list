@@ -28,12 +28,8 @@ $("#js-shopping-list-form").on('submit',function(e){
     $(event.target).closest("li").remove();
   });
 
- //Original code, delegation wasn't picking up appended list items within the HTML
-  // $('.shopping-item-toggle').on("click", function(e) {
-  //   $(this).parent().parent().find('.shopping-item').toggleClass("shopping-item__checked");
-  // });
-
-  // $('.shopping-item-delete').on("click", function(event) {
-  //   event.preventDefault();
-  //   $(event.target).closest("li").remove();
-  // });
+  //this function adds an li and the text from the input box as well as clearing the box out and keeping the cursor inside of the input box
+   $('button').click(function() {
+    var text = $('#list-item').val();
+    $('.add').append('<li>' + '<input class="check" type="checkbox"/>' + text + '<button class="delete">x</button>' + '</li>');
+    $('#list-item').val('').focus();
