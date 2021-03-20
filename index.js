@@ -32,12 +32,12 @@ $(function () {
   });
 
   $('.shopping-list').on('click', '.shopping-item-toggle', function (event) {
-    const targetItem = $(event.currentTarget).closest("li");
+    const targetItem = $(this).closest("li");
     targetItem.find(".shopping-item").toggleClass('shopping-item__checked');
   });
 
   $('.shopping-list').on('click', '.shopping-item-delete', function (event) {
-    const delItem = $(event.currentTarget).closest("li");
+    const delItem = $(this).closest("li");
     delItem.remove();
   });
 });
